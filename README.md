@@ -26,6 +26,18 @@ $ npm start
 
 It should be available via `localhost:3000`.
 
+
+到此为止，算是跑通，但是默认使用的是gpt-4o-realtime-preview-2024-10-01，比较贵。
+如果想要使用gpt-4o-mini-realtime-preview（价格便宜10倍），可以执行一下方法：
+1. 修改package.json
+2. 修改为`"@openai/realtime-api-beta": "0.0.0",`，版本号变为0.0.0
+3. 修改openai-realtime-console-main/node_modules/@openai/realtime-api-beta/lib/api.js
+4. 将`gpt-4o-realtime-preview-2024-10-01`替换为`gpt-4o-mini-realtime-preview`
+
+```
+$ npm restart
+```
+
 # Table of contents
 
 1. [Using the console](#using-the-console)
